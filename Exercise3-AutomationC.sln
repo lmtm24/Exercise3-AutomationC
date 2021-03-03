@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3-AutomationC", "Exercise3-AutomationC\Exercise3-AutomationC.csproj", "{3ED4DB0A-EF63-431F-A83C-F5996D863742}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ED4DB0A-EF63-431F-A83C-F5996D863742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED4DB0A-EF63-431F-A83C-F5996D863742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED4DB0A-EF63-431F-A83C-F5996D863742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED4DB0A-EF63-431F-A83C-F5996D863742}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33A88A10-EF69-4DE5-A7DA-A16B038AA290}
+	EndGlobalSection
+EndGlobal
