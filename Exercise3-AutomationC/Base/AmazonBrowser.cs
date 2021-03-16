@@ -11,7 +11,7 @@ namespace Exercise3_AutomationC.Base
 {
     public class AmazonBrowser
     {
-        private static String url = ConfigurationManager.AppSettings["URL"];
+                
         public enum Browser
         {
             Chrome
@@ -19,20 +19,26 @@ namespace Exercise3_AutomationC.Base
 
         public IWebDriver CreateBrowser(Browser browser)
         {
+            var appSettings = ConfigurationManager.AppSettings["URL"];
             IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(6);
-            //driver.Navigate().GoToUrl(url);
-            Console.WriteLine(url);
-            driver.Url = url;
+            driver.Navigate().GoToUrl("http://www.amazon.com.mx");
+           // driver.Navigate().GoToUrl(appSettings);
+            // Console.WriteLine(url);
+          // driver.Url = appSettings;
             return driver;
         }
 
-
         public void Click(IWebElement element)
         {
-            element.Click();
-            
+            element.Click();            
+        }
+
+        public void SendKeys(IWebElement element,String text)
+        {
+            element.SendKeys(text);
+
         }
 
     }

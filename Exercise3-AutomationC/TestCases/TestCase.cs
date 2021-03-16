@@ -10,18 +10,24 @@ namespace Exercise3_AutomationC.TestCases
     public class TestCase
     {
         HomePage homePage;
+        SignInPage signInPage;
 
         [TestInitialize]
         public void BeforeTest()
         {
             
             homePage = new HomePage();
+            signInPage = new SignInPage();
         }
 
         [TestMethod]
         public void amazon_LoginValidation()
-        {          
-            homePage.LogIn();
+        {
+            homePage.ClickIdentficate();
+         // homePage.ClickIdentficarse();            
+            signInPage.SignIn("lmtm24@gmail.com");
+            signInPage.ClickContinue();
+
         }
 
     }

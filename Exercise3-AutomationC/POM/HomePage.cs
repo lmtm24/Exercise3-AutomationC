@@ -10,17 +10,29 @@ namespace Exercise3_AutomationC.POM
     public class HomePage : AmazonPage
     {
         [FindsBy(How = How.XPath, Using = "//a[@id='nav-link-accountList']/span[@class='nav-line-2 nav-long-width']")]
-        private IWebElement logInButton { get; set; }
-    
-    public HomePage() : base()
+        private IWebElement identificate { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='nav-signin-tooltip']//span[@class='nav-action-inner']")]        
+        private IWebElement identificarse { get; set; }
+        //div[@id='nav-signin-tooltip']//span[@class='nav-action-inner']
+
+
+        public HomePage() : base()
     {
 
     }
-    public HomePage LogIn()
+    public HomePage ClickIdentficate()
     {
-            browser.Click(logInButton);
+            browser.Click(identificate);
             return this;
     }
+        public HomePage ClickIdentficarse()
+        {
+            browser.Click(identificate);
+            return this;
+        }
+
+
 
     }
 }
