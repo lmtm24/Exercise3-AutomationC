@@ -18,11 +18,13 @@ namespace Exercise3_AutomationC.TestCases
             
             homePage = new HomePage();
             signInPage = new SignInPage();
+            homePage.InitBrowser();
         }
 
         [TestMethod]
         public void amazon_LoginValidation()
         {
+            
             homePage.ClickIdentficate();
          // homePage.ClickIdentficarse();            
             signInPage.SignIn("lmtm24@gmail.com");

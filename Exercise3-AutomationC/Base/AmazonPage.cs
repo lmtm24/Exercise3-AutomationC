@@ -11,7 +11,7 @@ namespace Exercise3_AutomationC.Base
         protected AmazonBrowser browser;
         protected IWebDriver driver;
         
-        public AmazonPage()
+        public void StartAmazonBrowser()
         {
             browser = new AmazonBrowser();
             driver = browser.CreateBrowser(AmazonBrowser.Browser.Chrome);

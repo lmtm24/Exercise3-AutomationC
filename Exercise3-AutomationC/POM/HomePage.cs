@@ -21,6 +21,13 @@ namespace Exercise3_AutomationC.POM
     {
 
     }
+    
+    public HomePage InitBrowser()
+        {
+            StartAmazonBrowser();
+            return this;
+        }
+
     public HomePage ClickIdentficate()
     {
             browser.Click(identificate);

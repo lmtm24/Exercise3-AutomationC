@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Exercise3_AutomationC.POM
 {
-    class SignInPage : AmazonPage
+    public class SignInPage : AmazonPage
     {
         [FindsBy(How = How.XPath, Using = "//input[@type='email' and @name='email']")]
         private IWebElement email { get; set; }
@@ -20,6 +20,8 @@ namespace Exercise3_AutomationC.POM
         {
 
         }
+       
+        
         public SignInPage SignIn(String text)
         {
             browser.SendKeys(email,text);
