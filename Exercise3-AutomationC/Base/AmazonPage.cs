@@ -15,6 +15,11 @@ namespace Exercise3_AutomationC.Base
         {
             browser = new AmazonBrowser();
             driver = browser.CreateBrowser(AmazonBrowser.Browser.Chrome);
+
+        }
+        
+        public void InitPages()
+        {
             PageFactory.InitElements(driver, this);
         }
 
