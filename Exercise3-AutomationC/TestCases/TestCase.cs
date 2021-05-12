@@ -11,6 +11,8 @@ namespace Exercise3_AutomationC.TestCases
     {
         HomePage homePage;
         SignInPage signInPage;
+        ResultsPage resultsPage;
+        CartPage cartPage;
 
         [TestInitialize]
         public void BeforeTest()
@@ -18,17 +20,39 @@ namespace Exercise3_AutomationC.TestCases
             
             homePage = new HomePage();
             signInPage = new SignInPage();
-            homePage.InitBrowser();
+            resultsPage = new ResultsPage();
+            cartPage = new CartPage();
+            
         }
 
         [TestMethod]
         public void amazon_LoginValidation()
         {
-            
-            homePage.ClickIdentficate();
-         // homePage.ClickIdentficarse();            
-            signInPage.SignIn("lmtm24@gmail.com");
+            String email = "";
+            string pass = "";
+            String product = "Samsung Galaxy S9 64GB";
+            String AlienProduct = "Alienware AW2521HFL";
+            homePage.ClickIdentficate();         
+            signInPage.TypeEmail(email);
             signInPage.ClickContinue();
+            signInPage.TypePassword(pass);
+            signInPage.ClickSigninButton();
+            homePage.SearchProduct(product);
+            resultsPage.GetFisrPrice();            
+            resultsPage.ClickSamsung();
+            resultsPage.GetDetailPrice();
+            resultsPage.ValidatePrices();
+            resultsPage.AddToCart();
+            resultsPage.ClickCarritoButton();
+            cartPage.GetPrice();
+            cartPage.ValidatePrices();
+            cartPage.ValidateItems();            
+            cartPage.SearchNewItem(AlienProduct);
+            cartPage.AddToCart();
+            cartPage.ValidateNewItems();
+
+
+
 
         }
 

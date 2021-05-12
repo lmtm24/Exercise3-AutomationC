@@ -10,32 +10,35 @@ namespace Exercise3_AutomationC.POM
     public class HomePage : AmazonPage
     {
         [FindsBy(How = How.XPath, Using = "//a[@id='nav-link-accountList']/span[@class='nav-line-2 nav-long-width']")]
-        private IWebElement identificate { get; set; }
+        private IWebElement Identificate { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@id='nav-signin-tooltip']//span[@class='nav-action-inner']")]        
-        private IWebElement identificarse { get; set; }
-        //div[@id='nav-signin-tooltip']//span[@class='nav-action-inner']
+        private IWebElement Identificarse { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "input#twotabsearchtextbox")]
+        private IWebElement SearchField { get; set; }
 
 
         public HomePage() : base()
     {
-
-    }
-    
-    public HomePage InitBrowser()
-        {
-            StartAmazonBrowser();
-            return this;
-        }
-
+            SetUpBrowser();
+            InitPages();
+    }    
+  
     public HomePage ClickIdentficate()
     {
-            browser.Click(identificate);
+            browser.Click(Identificate);
             return this;
     }
         public HomePage ClickIdentficarse()
         {
-            browser.Click(identificate);
+            browser.Click(Identificarse);
+            return this;
+        }
+
+        public HomePage SearchProduct(String text)
+        {
+            browser.SendKeysEnter(SearchField, text);            
             return this;
         }
 

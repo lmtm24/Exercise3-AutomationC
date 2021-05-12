@@ -8,21 +8,20 @@ namespace Exercise3_AutomationC.Base
 {
     public class AmazonPage
     {
-        protected AmazonBrowser browser;
-        protected IWebDriver driver;
+        protected static AmazonBrowser browser;
+        protected static IWebDriver driver;
         
-        public void StartAmazonBrowser()
-        {
-            browser = new AmazonBrowser();
-            driver = browser.CreateBrowser(AmazonBrowser.Browser.Chrome);
-
-        }
-        
+              
         public void InitPages()
         {
             PageFactory.InitElements(driver, this);
         }
 
-
+        public void SetUpBrowser()
+        {
+            browser = new AmazonBrowser();
+            driver = browser.CreateBrowser(AmazonBrowser.Browser.Chrome);
+            browser.GoTo();
+        }
     }
 }
